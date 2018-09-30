@@ -81,12 +81,17 @@ exports.setupBoards = (boardid) => {
 
     let listNames = ['Done', 'To Do', 'Backlog'];
 
-    async.every(listNames, (name, cb) => {
+    async.eachSeries(listNames, (name, cb) => {
 
         exports.existList(name, boardid).then((status) => {
             if (!status) return exports.createList(name, boardid);
         }).then(() => {
-            cb();
+            console.log(name + ' created');
+
+            exports.existList(name, boardid).then((exists) => {
+                if (exists) cb();
+                else console.error('The list was not created');
+            });
         });
 
     }, (err) => {

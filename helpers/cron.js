@@ -6,6 +6,7 @@ const defer = require('node-promise').defer;
 
 const trello = require('./trello');
 const github = require('./github');
+const cron = require('./cron');
 
 exports.createDashbaord = () => {
     let deferred = defer();
