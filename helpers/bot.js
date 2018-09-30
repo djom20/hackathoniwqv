@@ -53,7 +53,7 @@ exports.startToWacth = () => {
 
         if(param != null && param != ''){
 
-            process.env['GITHUB_REPO'] = param;
+            process.env['GITHUB_REPO'] = param.trim();
             ctx.reply('Github: Url repository updated, now use /set_github_username command');
 
         } else ctx.reply('Sorry we cant get the parameter, please try again this command.');
@@ -65,7 +65,7 @@ exports.startToWacth = () => {
 
         if (param != null && param != '') {
 
-            process.env['GITHUB_USERENAME'] = param;
+            process.env['GITHUB_USERENAME'] = param.trim();
             ctx.reply('Github: Username updated, now use /set_github_hostname command');
 
         } else ctx.reply('Sorry we cant get the parameter, please try again this command.');
@@ -77,7 +77,7 @@ exports.startToWacth = () => {
 
         if (param != null && param != '') {
 
-            process.env['GITHUB_HOSTNAME'] = param;
+            process.env['GITHUB_HOSTNAME'] = param.trim();
             ctx.reply('Github: Hostname updated, now use /set_github_clientid command');
 
         } else ctx.reply('Sorry we cant get the parameter, please try again this command.');
@@ -89,7 +89,7 @@ exports.startToWacth = () => {
 
         if (param != null && param != '') {
 
-            process.env['GITHUB_CLIENTID'] = param;
+            process.env['GITHUB_CLIENTID'] = param.trim();
             ctx.reply('Github: Client id updated, now use /set_github_clientsecret command');
 
         } else ctx.reply('Sorry we cant get the parameter, please try again this command.');
@@ -101,9 +101,9 @@ exports.startToWacth = () => {
 
         if (param != null && param != '') {
 
-            process.env['GITHUB_CLIENTSECRET'] = param;
+            process.env['GITHUB_CLIENTSECRET'] = param.trim();
             ctx.reply('Github: Client secret updated, Congratulation you have configurated Github account.');
-            ctx.reply('We going to start configurate Trello, please use the trello_setup command');
+            ctx.reply('We going to start configurate Trello, please use the /trello_setup command');
 
         } else ctx.reply('Sorry we cant get the parameter, please try again this command.');
     });
@@ -114,7 +114,7 @@ exports.startToWacth = () => {
 
         if (param != null && param != '') {
 
-            process.env['TRELLO_BOARDNAME'] = param;
+            process.env['TRELLO_BOARDNAME'] = param.trim();
             ctx.reply('Trello: Board name updated, now use /set_trello_apiurl command');
 
         } else ctx.reply('Sorry we cant get the parameter, please try again this command.');
@@ -126,7 +126,7 @@ exports.startToWacth = () => {
 
         if (param != null && param != '') {
 
-            process.env['TRELLO_APIURL'] = param;
+            process.env['TRELLO_APIURL'] = param.trim();
             ctx.reply('Trello: API url updated, now use /set_trello_apikey command');
 
         } else ctx.reply('Sorry we cant get the parameter, please try again this command.');
@@ -138,7 +138,7 @@ exports.startToWacth = () => {
 
         if (param != null && param != '') {
 
-            process.env['TRELLO_APIKEY'] = param;
+            process.env['TRELLO_APIKEY'] = param.trim();
             ctx.reply('Trello: API key updated, now use /set_trello_token command');
 
         } else ctx.reply('Sorry we cant get the parameter, please try again this command.');
@@ -150,7 +150,7 @@ exports.startToWacth = () => {
 
         if (param != null && param != '') {
 
-            process.env['TRELLO_TOKEN'] = param;
+            process.env['TRELLO_TOKEN'] = param.trim();
             ctx.reply('Trello: API token updated, Congratulation you have configurated Trello account.');
             ctx.reply('Wait, setting...');
 
